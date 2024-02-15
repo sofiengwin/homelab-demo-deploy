@@ -1,0 +1,8 @@
+name: Deploy Demo App To My Kubernetes Homelab
+on: [push]
+jobs:
+  Test-SSH:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is a test"
+
