@@ -4,5 +4,8 @@ jobs:
   Test-SSH:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This is a test"
+      - run: |
+          echo "This is a test"
+          ssh $(secrets.USERNAME)@$(secrets.HOST)
+
 
