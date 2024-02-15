@@ -1,0 +1,1 @@
+ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} -v
