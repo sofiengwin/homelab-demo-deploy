@@ -9,6 +9,6 @@ jobs:
             echo "This is a test"
             echo ${{ secrets.USERNAME }}
             echo ${{ secrets.HOST }}
-            ssh sofien@70.71.38.86 -v
+            ssh -i ${{ secrets.PRIVATE_KEY }} sofien@70.71.38.86 -v
 
 
