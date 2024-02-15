@@ -9,6 +9,6 @@ jobs:
             echo "This is a test"
             echo ${{ secrets.USERNAME }}
             echo ${{ secrets.HOST }}
-            ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }}
+            ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} -v
 
 
