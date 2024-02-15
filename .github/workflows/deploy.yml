@@ -7,8 +7,8 @@ jobs:
       - name: Test ssh connection
         run: |
             echo "This is a test"
-            puts ${{ secrets.USERNAME }}
-            puts ${{ secrets.HOST }}
+            echo ${{ secrets.USERNAME }}
+            echo ${{ secrets.HOST }}
             ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }}
 
 
