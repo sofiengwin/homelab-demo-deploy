@@ -4,8 +4,9 @@ jobs:
   Test-SSH:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "This is a test"
-          ssh $(secrets.USERNAME)@$(secrets.HOST)
+      - name: Test ssh connection
+        run: |
+            echo "This is a test"
+            ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }}
 
 
