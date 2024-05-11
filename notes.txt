@@ -1,1 +1,8 @@
 ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} -v
+
+
+sudo ss -ltup
+sudo ufw status
+sudo ufw allow ssh
+
+kubectl create secret docker-registry github-cr --docker-server=https://ghcr.io --docker-username=sofiengwin --docker-password=mygithubreadtoken --docker-email=sengodwin@gmail.com
