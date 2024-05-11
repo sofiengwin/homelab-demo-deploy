@@ -19,7 +19,4 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.REMOTE_SERVER }} -v "ls -la"
-
-
-          ssh-keyscan -H 70.71.50.252
+          ssh devops@70.71.50.252 -v "ls -la"
