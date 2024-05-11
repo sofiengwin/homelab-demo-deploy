@@ -39,4 +39,4 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh devops@70.71.50.252 -v "ls -la"
+          ssh devops@70.71.50.252 -v -o StrictHostKeyChecking=no "ls -la"
