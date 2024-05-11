@@ -17,6 +17,8 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_ed25519
 
       # - name: Setup upterm session
       #   uses: lhotari/action-upterm@v1
