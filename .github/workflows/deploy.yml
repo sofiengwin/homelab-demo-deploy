@@ -2,7 +2,7 @@ name: Deploy Demo App To My Kubernetes Homelab
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   Test-SSH:
     runs-on: ubuntu-latest
