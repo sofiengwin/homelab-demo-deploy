@@ -15,6 +15,7 @@ jobs:
           mkdir -p ~/.ssh
           echo ${{ secrets.PRIVATE_KEY }} > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.REMOTE_SERVER }} -v
           ssh-keyscan -H ${{ secrets.REMOTE_SERVER }} >> ~/.ssh/known_hosts
 
       - name: Deploy to server
