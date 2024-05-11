@@ -19,9 +19,10 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
           USERNAME: ${{ secrets.USERNAME }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo ${{ secrets.PRIVATE_KEY }} > ~/.ssh/id_ed25519
+          echo $PRIVATE_KEY > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
