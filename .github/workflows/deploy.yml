@@ -39,4 +39,6 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh devops@70.71.50.252 -v -o StrictHostKeyChecking=no "ls -la"
+          ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          ssh devops@70.71.50.252 -v "ls -la"
