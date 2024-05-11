@@ -17,7 +17,8 @@ jobs:
 
       - name: Add SSH private key to agent
         env:
-          SUPER_SECRET: ${{ secrets.USERNAME }}
+          SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
+          USERNAME: ${{ secrets.USERNAME }}
         run: |
           mkdir -p ~/.ssh
           # echo ${{ secrets.PRIVATE_KEY }} > ~/.ssh/id_ed25519
@@ -26,6 +27,7 @@ jobs:
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
           echo $USERNAME
+          echo $SUPER_SECRET
           cat ~/.ssh/id_ed25519
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_ed25519
