@@ -17,10 +17,10 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
 
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        with:
-          limit-access-to-actor: true 
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+      #   with:
+      #     limit-access-to-actor: true 
 
       - name: Deploy to server
         run: |
