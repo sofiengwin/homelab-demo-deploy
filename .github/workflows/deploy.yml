@@ -35,5 +35,5 @@ jobs:
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
           ls -al ~/.ssh/
-          cat  /etc/ssh/ssh_config
+          cat  ~/.ssh/id_ed25519
           ssh devops@70.71.50.252 -v "ls -la"
