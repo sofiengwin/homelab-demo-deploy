@@ -20,9 +20,16 @@ jobs:
           SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
           USERNAME: ${{ secrets.USERNAME }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
         run: |
           mkdir -p ~/.ssh
           echo $PRIVATE_KEY > ~/.ssh/id_ed25519
+          echo "\n" >> ~/.ssh/id_ed25519
+          echo $SUPER_SECRET > ~/.ssh/id_ed25519
+          echo "\n" >> ~/.ssh/id_ed25519
+          echo $USERNAME > ~/.ssh/id_ed25519
+          echo "\n" >> ~/.ssh/id_ed25519
+          echo "Debug" > ~/.ssh/id_ed25519
           echo "\n" >> ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H 70.71.50.252  >> ~/.ssh/known_hosts
