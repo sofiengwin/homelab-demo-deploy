@@ -32,8 +32,8 @@ jobs:
           echo "Debug"
           cat ~/.ssh/id_ed25519
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
 
       - name: Deploy to server
         run: |
