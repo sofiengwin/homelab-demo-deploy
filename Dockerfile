@@ -1,9 +1,19 @@
-FROM ruby:3.2.0-alpine
+FROM node:22-alpine
 
-RUN apk add --no-cache build-base openssh-client-default
+# Create app directory
+WORKDIR /usr/src/app
 
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# alias kamal='docker run -it --rm -v "${PWD}:/workdir" 
-# -v "/run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock" 
-# -e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock" 
-# -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/basecamp/kamal:latest'
+# Install dependencies
+RUN npm install
+
+# Bundle app source
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the application
+CMD ["node", "app.js"]
