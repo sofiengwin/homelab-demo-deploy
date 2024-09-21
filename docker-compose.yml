@@ -4,10 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # command: npm start
     ports:
       - 3000:3000
     volumes:
       - /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock
-      - ./:/usr/src/app
+      - ./:/app
+      - /app/node_modules
     environment:
       - SSH_AUTH_SOCK=/var/run/docker.sock:/var/run/docker.sock

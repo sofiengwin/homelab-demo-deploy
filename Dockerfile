@@ -1,7 +1,7 @@
-FROM node:22-alpine
+FROM node:22
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "app.js"]
+CMD ["node", "./app.js"]
