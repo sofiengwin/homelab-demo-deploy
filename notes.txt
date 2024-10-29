@@ -6,3 +6,13 @@ sudo ufw status
 sudo ufw allow ssh
 
 kubectl create secret docker-registry github-cr --docker-server=https://ghcr.io --docker-username=sofiengwin --docker-password=mygithubreadtoken --docker-email=sengodwin@gmail.com
+
+helm upgrade sofien-release ./sofien --reuse-values --set deployment.image=sofiencloud/sofien:RC-20240510-1717
+
+
+Todo:
+- Build simple go server
+- Push go app to docker hub
+- Add helm chart for deploy server
+- Confirm that go app can use host ssh socket
+

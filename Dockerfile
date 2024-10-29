@@ -1,19 +1,28 @@
-FROM node:22
+# Build stage
+FROM golang:1.22 AS builder
 
-# Create app directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy go mod files
+COPY go.mod go.sum ./
+RUN go mod download
 
-# Install dependencies
-RUN npm install
-
-# Bundle app source
+# Copy source code
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 3000
+# Build the application
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
-# Command to run the application
-CMD ["node", "./app.js"]
+# Final stage
+FROM golang:1.22
+
+WORKDIR /app
+
+# Copy the binary from builder
+COPY --from=builder /app/main .
+
+# Expose the port your server runs on
+EXPOSE 8080
+
+# Run the binary
+ENTRYPOINT ["go", "run", "main.go"]
