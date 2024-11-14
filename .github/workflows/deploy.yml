@@ -21,4 +21,4 @@ jobs:
           context: ../../
           file: ./Dockerfile
           push: true
-          tags: sofiencloud/home-lab-deployer:latest
+          tags: sofiencloud/home-lab-deployer:test
