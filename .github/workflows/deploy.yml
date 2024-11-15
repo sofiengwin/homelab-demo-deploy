@@ -20,7 +20,7 @@ jobs:
 
       - name: Debug SSH
         run: |
-          ssh -vvv sofien@${{ secrets.SSH_HOST }}
+          ssh -vvv sofien@${{ secrets.SSH_HOST }} ls -la
 
       # - name: login to docker registry
       #   uses: docker/login-action@v3
