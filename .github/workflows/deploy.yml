@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to homelab
-        uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml
+        uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml@master
         with:
           ssh-user: sofien
           ssh-host: ${{ secrets.SSH_HOST }}
