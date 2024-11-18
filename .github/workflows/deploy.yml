@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to homelab
-        uses: sofiengwin/homelab-demo-deploy/.github/workflows/deploy.yml
+        uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml
         with:
           ssh-user: sofien
           ssh-host: ${{ secrets.SSH_HOST }}
@@ -29,3 +29,7 @@ jobs:
       #     file: ./Dockerfile
       #     push: true
       #     tags: sofiencloud/home-lab-deployer:latest
+
+
+
+      
