@@ -18,7 +18,7 @@ jobs:
       #   uses: csexton/debugger-action@master
           
       - name: Adding Known Hosts
-        run: ssh-keyscan -v -H 70.70.238.249 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -v -H 70.70.238.249 >> ~/.ssh/known_hosts 2>&1
 
 
       - name: Debug SSH
