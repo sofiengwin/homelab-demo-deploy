@@ -13,6 +13,9 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+
+      - name: Setup SSH debug session
+        uses: lhotari/action-upterm@v1
           
       - name: Adding Known Hosts
         run: ssh-keyscan -v -H 70.70.238.249 >> ~/.ssh/known_hosts
