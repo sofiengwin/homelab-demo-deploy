@@ -8,13 +8,14 @@ jobs:
     steps:
       - name: check repository
         uses: actions/checkout@v4
-
-      - name: Deploy to homelab
-        uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml@master
-        with:
-          ssh-user: sofien
-          ssh-host: ${{ secrets.SSH_HOST }}
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+     
+  deploy:
+    uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml@master
+    with:
+      ssh-user: sofien
+    secrets:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       # - name: login to docker registry
       #   uses: docker/login-action@v3
