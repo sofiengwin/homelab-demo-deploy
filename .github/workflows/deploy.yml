@@ -28,7 +28,7 @@ jobs:
     uses: sofiengwin/hld-github-actions/.github/workflows/deploy.yml@master
     with:
       ssh-user: sofien
-      service-name: home-lab-deployer
+      # service-name: home-lab-deployer
     secrets:
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
